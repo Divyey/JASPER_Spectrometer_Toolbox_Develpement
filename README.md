@@ -1,5 +1,13 @@
 # JASPER Spectroscopic Solution for Milk Quality Analysis
 
+## Sample Prediction: 
+User can input values and it predicts Milk Grade: Low (C), Medium (B), High (A)
+
+<img width="305" alt="Screenshot 2025-03-25 at 10 31 26 PM" src="https://github.com/user-attachments/assets/d689da02-de7d-4a9d-b439-a8507f568ccd" />  <img width="301" alt="Screenshot 2025-03-25 at 10 29 39 PM" src="https://github.com/user-attachments/assets/ea511886-5192-4954-b232-8616afa5cb04" />
+
+=======================================================================================================
+# JASPER Spectroscopic Solution for Milk Quality Analysis
+
 Chemometrics is the science of extracting information from chemical data using statistical and mathematical models, it plays a crucial role in analytical chemistry helping scientists interpret complex datasets from spectroscopy, chromatography and electrochemistry.
 
 ## CheckAG and the Chemometrics Toolbox
@@ -32,7 +40,7 @@ Develop a robust, innovative, and high-performance open-source chemometrics tool
 
 ## Software Development Life Cycle
 
-
+<img width="526" alt="Screenshot 2025-03-25 at 9 30 33 PM" src="https://github.com/user-attachments/assets/7c583cc0-de0c-4940-a986-6007f7f968e7" />
 
 ## Industrial Application of Chemometrics
 
@@ -229,6 +237,10 @@ The document continues with sections on:
 
 ## Analytics: Model Performance Analysis (Things To-Do)
 
+![image](https://github.com/user-attachments/assets/849bf2a1-1fb8-48e6-8857-3961bfff9f74)
+![image](https://github.com/user-attachments/assets/04a5d382-596c-4a01-bb48-27a9ff9ebce2)
+
+
 *   Overfitting/Underfitting Check: Examined training vs validation accuracy to ensure generalization.
 *   Hyperparameter Tuning: Optimized model parameters to improve accuracy.
 *   Accuracy vs. Loss Graphs: Visualized model performance over epochs.
@@ -240,7 +252,17 @@ The document continues with sections on:
 *   Deploy using Flask/FastAPI (backend).
 *   Monitor predictions in real-world usage.
 
-## Presentation: Key Insights / Predictions
+  ## Presentation: Key Insights / Predictions
+  
+<img width="335" alt="Screenshot 2025-03-25 at 10 17 23 PM" src="https://github.com/user-attachments/assets/b0dafb7b-d942-4966-8b6d-3c37e03b4c61" />
+<img width="270" alt="Screenshot 2025-03-25 at 10 17 35 PM" src="https://github.com/user-attachments/assets/713ccbf6-d931-4728-8098-55f2d03870c1" />
+<img width="309" alt="Screenshot 2025-03-25 at 10 18 19 PM" src="https://github.com/user-attachments/assets/4184cf4a-bdfa-42cb-a8e3-eea6b4c6e79b" />
+
+![image](https://github.com/user-attachments/assets/4be92d04-d08b-41ba-863a-cc8f9c1cac65)
+
+
+
+
 
 *   **Feature Importance:** Analysis revealed that factors like pH, fat percentage, bacterial count, and antibiotic residues significantly influence milk quality.
 *   **Top Performing Model:** Among Random Forest, XGBoost, KNN, and ANN, the XGBoost model demonstrated the highest accuracy, balancing precision and recall effectively.
@@ -248,9 +270,16 @@ The document continues with sections on:
 *   **Chemometric Analysis:** Spectroscopic data, especially absorbance and fluorescence, strongly correlated with quality indicators, validating the effectiveness of Jasper's methodology.
 *   **Predicted Optimal Quality Parameters:** The study identified an ideal range for fat content, acidity, and bacterial count, aiding in quality standardization.
 
+
 ## Feedback: Conclusion and Recommendations
 
 ### Conclusion:
+
+![image](https://github.com/user-attachments/assets/df940d86-16d8-4a97-baf7-3a4dd38a9558)
+![image](https://github.com/user-attachments/assets/393127f7-3b42-4c93-9b15-90c1198f2658)
+![image](https://github.com/user-attachments/assets/c2fd8178-2ba1-4bb0-a430-fdc50481a228)
+<img width="342" alt="Screenshot 2025-03-25 at 10 24 11 PM" src="https://github.com/user-attachments/assets/5ff7b9dc-e2b0-49a4-8a98-c8b32c0aac96" />
+
 
 *   The JASPER Spectroscopic Solution effectively predicts milk quality using machine learning and chemometric analysis.
 *   The integration of spectroscopy-based features enhances prediction accuracy, making it a powerful tool for quality assurance in the dairy industry.
