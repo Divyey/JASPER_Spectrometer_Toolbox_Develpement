@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASPER Chemometrics Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        .required {
+            color: red;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .essential {
+            color: red; /* Highlight essential features in red */
+        }
+
+        /* Style for the result box */
+        #resultBox {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>JASPER Chemometrics - Milk Quality Input Form</h2>
+        
+        <div class="form-group">
+            <label>Country <span class="required">*</span></label>
+            <select id="countrySelect" onchange="updateBrands()">
+                <option>Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Germany">Germany</option>
+                <option value="Brazil">Brazil</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="France">France</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Australia">Australia</option>
+                <option value="Switzerland">Switzerland</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Brand <span class="required">*</span></label>
+            <select id="brandSelect">
+                <option>Select option</option> <!-- Default option -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="essential">pH (6.0-7.2) <span class="required">*</span></label>
+            <input type="number" step="0.1" min="6.0" max="7.2" required>
+        </div>
+
+        <div class="form-group">
+            <label class="essential">Fat (1.0-6.5%) <span class="required">*</span></label>
+            <input type="number" step="0.1" min="1.0" max="6.5" required>
+        </div>
+
+        <div class="form-group">
+            <label class="essential">Protein (2.5-4.5%) <span class="required">*</span></label>
+            <input type="number" step="0.1" min="2.5" max="4.5" required>
+        </div>
+
+        <!-- Lactose -->
+        <div class="form-group">
+            <label class='essential'>Lactose (3.5 - 5.5%)</label>
+            <input type="number" step="0.1" min="3.5" max="5.5">
+        </div>
+
+        <!-- Solids-Not-Fat (SNF) -->
+        <div class="form-group">
+            <label class='essential'>Solids-Not-Fat (SNF) (8 - 12%)</label>
+            <input type="number" step="0.1" min="8" max="12">
+        </div>
+
+        <!-- Water Content -->
+        <div class="form-group">
+            <label class="essential">Water Content (0 - < 100%) <span class="required">*</span></label>
+            <input type="number" step="0.1" min="0" max="100" required>
+        </div>
+
+        <!-- Freezing Point -->
+        <div class="form-group">
+            <label>Freezing Point (-1 to -0.4°C)</label>
+            <input type="number" step="0.001">
+        </div>
+
+        <!-- Total Bacterial Count -->
+        <div class="form-group">
+            <label class="essential">Total Bacterial Count (TBC) (10² - 10⁷ CFU/mL)</label>
+            <input type="number" step="1" min="100" max="10000000">
+        </div>
+
+        <!-- Somatic Cell Count -->
+        <div class="form-group">
+            <label class="essential">Somatic Cell Count (SCC) (10² - 10⁶ cells/mL)</label>
+            <input type="number" step="1" min="100" max="1000000">
+        </div>
+        
+        <!-- Acidity -->
+        <div class="form-group">
+            <label class="essential">Acidity (0.12 to 0.20%) <span class="required">*</span></label>
+            <input type="number" step="0.01" min="0.12" max="0.20" required>
+        </div>
+
+         <!-- Alcohol Test -->
+         <div class="form-group">
+             <label class="essential">Alcohol Test (0.05 to 0.25%) <span class='required'>*</span></label>
+             <input type='number' step='0.01' min='0.05' max='0.25' required/>
+         </div>
+
+         <!-- Peroxidase Activity -->
+         <div class='form-group'>
+             <label class='essential'>Peroxidase Activity (0.5 to 4) <span class='required'>*</span></label>
+             <input type='number' step='0.1' min='0.5' max='4' required/>
+         </div>
+
+         <!-- Urea Content -->
+         <div class='form-group'>
+             <label class='essential'>Urea Content (<60 mg per dL) <span class='required'>*</span></label>
+             <input type='number' step='1' min='0' max='60' required/>
+         </div>
+
+         <!-- Taste -->
+         <div class='form-group'>
+             <label class='essential'>Taste (1-10) <span class='required'>*</span></label>
+             <input type='number' step='1' min='1' max='10' required/>
+         </div>
+
+         <!-- Odor -->
+         <div class='form-group'>
+             <label class='essential'>Odor (1-10) <span class='required'>*</span></label>
+             <input type='number' step='1' min='1' max='10' required/>
+         </div>
+
+          <!-- Turbidity -->
+        <div class="form-group">
+            <label>Turbidity (50-500 NTU)</label>
+            <input type="number" step="0.1" min="50" max="500">
+        </div>
+
+        <!-- Color in CIE L*a*b* Space -->
+        <div class="form-group">
+            <label>Color_L (Lightness, 0-100)</label>
+            <input type="number" step="0.1" min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>Color_a (Green-Red, -128 to 127)</label>
+            <input type="number" step="0.1" min="-128" max="127">
+        </div>
+
+        <div class="form-group">
+            <label>Color_b (Blue-Yellow, -128 to 127)</label>
+            <input type="number" step="0.1" min="-128" max="127">
+        </div>
+
+        <!-- Absorbance at Specific Wavelengths -->
+        <div class='form-group'>
+            <label>Absorbance at Specific Wavelengths (0.1 - 1.0)</label>
+            <input type='number' step='0.1' min='0'/>
+        </div>
+
+        <!-- Fluorescence Spectrum -->
+        <div class='form-group'>
+            <label>Fluorescence Spectrum (0.5 - 2.0)</label>
+            <input type='number' step='0.1' min='0'/>
+        </div>
+
+        <!-- Optical Density (OD) -->
+        <div class='form-group'>
+            <label>Optical Density (0.1 - 1.0 OD)</label>
+            <input type='number' step='0.1' min='0' max='1.0'/>
+        </div>
+
+        <!-- Scattering Coefficient -->
+        <div class='form-group'>
+            <label>Scattering Coefficient (0.2 - 1.5)</label>
+            <input type='number' step='0.1' min='0.3' max='1.5'/>
+        </div>
+
+        <!-- Transmittance at Wavelengths -->
+        <div class='form-group'>
+            <label>Transmittance at Wavelengths (70 - 100)</label>
+            <input type='number' step='0.1' min='70' max='100'/>
+        </div>
+
+         <!-- Temperature (°C) -->
+         <div class='form-group'>
+             <label class='essential'>Temperature [2-8°C(stored), 30-100°C(processed)]</label>
+             <input type='number' step='0.1' min='-20' max='100' required/>
+         </div>
+
+         <!-- Added Detergents & Starch -->
+         <div class='form-group'>
+             <label>Added Detergents & Starch</label>
+             <select required>
+                 <option>Select option</option>
+                 <option>Yes</option>
+                 <option>No</option>
+             </select>
+         </div>
+
+         <!-- Antibiotic Residues -->
+         <div class='form-group'>
+             <label>Antibiotic Residues</label>
+             <select required>
+                 <option>Select option</option>
+                 <option>Yes</option>
+                 <option>No</option>
+             </select>
+         </div>
+
+         <!-- Fat Classification -->
+         <div class='form-group'>
+             <label>Fat Classification</label>
+             <select required>
+                 <option>Select option</option>
+                 <option>Low</option>
+                 <option>Medium</option>
+                 <option>High</option>
+                 <option>Very High</option>
+             </select>
+         </div>
+
+         <!-- Submit Button -->
+         <button onclick="predictGrade()">Predict Milk Grade</button>
+
+         <!-- Result Box -->
+         <div id="resultBox"></div>
+     </div>
+
+     <!-- JavaScript Code -->
+     <script>
+        const countryBrands = {
+            "India": ["Amul", "Mother Dairy", "Nandini", "Kwality Dairy"],
+            "USA": ["Dairy Farmers of America", "Land O'Lakes", "Darigold", "HP Hood"],
+            "Germany": ["Müller", "Hochwald", "DMK Group", "Arla Foods"],
+            "Brazil": ["Nestlé Brasil", "Italac", "Piracanjuba", "Laticínios Bela Vista"],
+            "New Zealand": ["Fonterra", "Anchor", "Westland Milk Products", "Lewis Road Creamery"],
+            "France": ["Lactalis", "Danone", "Candia", "Sodiaal"],
+            "Netherlands": ["FrieslandCampina", "CONO Kaasmakers", "Vreugdenhil Dairy Foods"],
+            "Denmark": ["Arla Foods", "Thise Mejeri", "Danish Crown"],
+            "Australia": ["Murray Goulburn", "Bega Cheese", "Norco Co-operative"],
+            "Switzerland": ["Emmi", "Cremo", "Hochdorf Swiss Milk"]
+        };
+
+        function updateBrands() {
+            const countrySelect = document.getElementById('countrySelect');
+            const brandSelect = document.getElementById('brandSelect');
+            
+            // Clear previous options
+            brandSelect.innerHTML = '<option>Select option</option>'; // Reset to default
+
+            const selectedCountry = countrySelect.value;
+
+            if (selectedCountry && countryBrands[selectedCountry]) {
+                const brands = countryBrands[selectedCountry];
+                brands.forEach(brand => {
+                    const option = document.createElement('option');
+                    option.value = brand;
+                    option.textContent = brand;
+                    brandSelect.appendChild(option);
+                });
+            }
+        }
+         function predictGrade() {
+             const grades = ["A-High", "B-Medium", "C-Low"];
+             const randomGrade = grades[Math.floor(Math.random() * grades.length)];
+             document.getElementById("resultBox").innerText = "Predicted Milk Grade: " + randomGrade;
+         }
+     </script>
+   </body >
+   </html >
