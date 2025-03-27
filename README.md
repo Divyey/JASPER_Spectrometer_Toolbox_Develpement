@@ -5,7 +5,6 @@ User can input values and it predicts Milk Grade: Low (C), Medium (B), High (A)
 
 <img width="305" alt="Screenshot 2025-03-25 at 10 31 26 PM" src="https://github.com/user-attachments/assets/d689da02-de7d-4a9d-b439-a8507f568ccd" />  <img width="301" alt="Screenshot 2025-03-25 at 10 29 39 PM" src="https://github.com/user-attachments/assets/ea511886-5192-4954-b232-8616afa5cb04" />
 
-=======================================================================================================
 # JASPER Spectroscopic Solution for Milk Quality Analysis
 
 Chemometrics is the science of extracting information from chemical data using statistical and mathematical models, it plays a crucial role in analytical chemistry helping scientists interpret complex datasets from spectroscopy, chromatography and electrochemistry.
